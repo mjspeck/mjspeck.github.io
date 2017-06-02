@@ -3,6 +3,8 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
+
+
 body {
   overflow-x: hidden;
   font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -148,7 +150,7 @@ fieldset[disabled] .btn-xl.active {
 }
 .navbar-custom {
   background-color: #222222;
-  border-color: transparent;
+  /*border-color: transparent;*/
 }
 .navbar-custom .navbar-brand {
   color: #fed136;
@@ -199,7 +201,7 @@ fieldset[disabled] .btn-xl.active {
 }
 @media (min-width: 768px) {
   .navbar-custom {
-    background-color: transparent;
+    /*background-color: transparent; */
     padding: 25px 0;
     -webkit-transition: padding 0.3s;
     -moz-transition: padding 0.3s;
@@ -278,7 +280,7 @@ header .intro-text .intro-heading {
   }
 }
 section {
-  padding: 100px 0;
+  padding: 50px;
 }
 section h2.section-heading {
   font-size: 40px;
@@ -539,7 +541,7 @@ section h3.section-subheading {
   margin-bottom: 50px;
 }
 .team-member img {
-  margin: 0 auto;
+  margin: center;
   border: 7px solid white;
 }
 .team-member h4 {
@@ -549,6 +551,10 @@ section h3.section-subheading {
 }
 .team-member p {
   margin-top: 0;
+}
+/*Need to figure THIS out*/
+.col-sm-4{
+  margin: center;
 }
 aside.clients img {
   margin: 50px auto;
