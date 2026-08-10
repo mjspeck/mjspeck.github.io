@@ -207,7 +207,12 @@ img { max-width: 100%; height: auto; display: block; }
 
 @media (max-width: 46rem) {
   .hero__grid { grid-template-columns: minmax(0, 1fr); }
-  .hero__portrait { display: none; }
+
+  /* Single column: lead with the portrait above the name. */
+  .hero__portrait {
+    order: -1;
+    width: min(8.5rem, 34vw);
+  }
 }
 
 /* Current position callout */
@@ -571,4 +576,9 @@ img { max-width: 100%; height: auto; display: block; }
   .rise.is-in { opacity: 1; transform: none; }
 
   .hero .rise { transition-delay: calc(var(--i, 0) * 90ms); }
+}
+
+/* The portrait leads the single-column hero, so it rises first there. */
+@media (prefers-reduced-motion: no-preference) and (max-width: 46rem) {
+  .hero .hero__portrait { transition-delay: 0s; }
 }
