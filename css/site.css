@@ -134,9 +134,16 @@ img { max-width: 100%; height: auto; display: block; }
 .hero__grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: clamp(2rem, 5vw, 4rem);
+  grid-template-areas:
+    "name portrait"
+    "body portrait";
+  column-gap: clamp(2rem, 5vw, 4rem);
   align-items: start;
 }
+
+.hero__name { grid-area: name; }
+.hero__body { grid-area: body; }
+.hero__portrait { grid-area: portrait; }
 
 .hero__name {
   font-size: clamp(3.75rem, 13vw, 9rem);
@@ -206,13 +213,16 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 @media (max-width: 46rem) {
-  .hero__grid { grid-template-columns: minmax(0, 1fr); }
-
-  /* Single column: lead with the portrait above the name. */
-  .hero__portrait {
-    order: -1;
-    width: min(8.5rem, 34vw);
+  /* Narrow: portrait sits beside the name, body runs full width beneath. */
+  .hero__grid {
+    grid-template-areas:
+      "name portrait"
+      "body body";
+    column-gap: 1.25rem;
+    row-gap: 1rem;
   }
+
+  .hero__portrait { width: min(7.5rem, 30vw); }
 }
 
 /* Current position callout */
@@ -578,7 +588,7 @@ img { max-width: 100%; height: auto; display: block; }
   .hero .rise { transition-delay: calc(var(--i, 0) * 90ms); }
 }
 
-/* The portrait leads the single-column hero, so it rises first there. */
+/* Narrow: the portrait sits beside the name, so the two rise together. */
 @media (prefers-reduced-motion: no-preference) and (max-width: 46rem) {
   .hero .hero__portrait { transition-delay: 0s; }
 }
