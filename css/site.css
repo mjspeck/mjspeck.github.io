@@ -472,10 +472,37 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 @media (max-width: 40rem) {
-  .role { grid-template-columns: minmax(0, 1fr); gap: 0.75rem; min-height: 0; }
-  .role__time { text-align: left; padding-top: 0; }
-  .role__time::before, .role__time::after { display: none; }
-  .role__span { display: inline; margin-left: 0.75rem; }
+  /* Narrow: the time column stacks above the entry, so the spine moves to the
+     far left and the whole role indents past it. --rail stays inside --gutter. */
+  .role {
+    --rail: 1rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+    min-height: 0;
+    padding-left: var(--rail);
+  }
+
+  /* Static so the spine pseudos hang off .role and span the whole entry —
+     .role__time is only one line tall here. */
+  .role__time {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 0.75rem;
+    text-align: left;
+    padding-top: 0;
+  }
+
+  .role__span { margin-top: 0; }
+
+  .role__time::before { right: auto; left: 0; }
+
+  .role__time::after {
+    top: 0.28rem;
+    right: auto;
+    left: -3px;
+  }
 }
 
 /* ── Capabilities ───────────────────────────────────────── */
@@ -549,8 +576,17 @@ img { max-width: 100%; height: auto; display: block; }
 
 @media (max-width: 40rem) {
   .edu { grid-template-columns: minmax(0, 1fr); gap: 0.75rem; }
-  .edu__time { text-align: left; padding-top: 0; }
-  .edu__time .role__span { display: inline; margin-left: 0.5rem; }
+
+  .edu__time {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 0.5rem;
+    text-align: left;
+    padding-top: 0;
+  }
+
+  .edu__time .role__span { margin-top: 0; }
 }
 
 /* ── Footer ─────────────────────────────────────────────── */
