@@ -39,5 +39,5 @@ Design tokens (color, type, spacing rhythm) are the `:root` custom properties at
 
 ## Deploying
 
-Push to `master`. GitHub Pages publishes from the branch root; `CNAME` holds the custom domain.
+Push to `main`. GitHub Pages publishes from the branch root; `CNAME` holds the custom domain.
 

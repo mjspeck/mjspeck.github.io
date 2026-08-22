@@ -42,7 +42,7 @@ chore: ignore editor swap files
 ## Repository
 
 This is the personal site for Matt Speck, served by GitHub Pages from the
-`master` branch root at [www.mattspeck.com](https://www.mattspeck.com/).
+`main` branch root at [www.mattspeck.com](https://www.mattspeck.com/).
 `CNAME` holds the custom domain.
 
 Static, no build step. Three files carry the site:
@@ -90,4 +90,4 @@ personal gmail address are **rejected on push**. Use:
 Matt Speck <20689127+mjspeck@users.noreply.github.com>
 ```
 
-Do not force-push shared history. Open a pull request against `master`.
+Do not force-push shared history. Open a pull request against `main`.
